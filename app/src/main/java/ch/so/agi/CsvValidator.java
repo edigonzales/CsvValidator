@@ -19,9 +19,6 @@ public class CsvValidator {
         Character valueSeparator = null;
         String encoding = null;
         
-//        String fileName = "src/main/data/csv/data1.csv";
-//        String modelName = "CsvModel";
-
         List<String> files = new ArrayList<String>();
         files.add(new File(fileName).getAbsolutePath());
         
