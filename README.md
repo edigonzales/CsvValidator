@@ -20,4 +20,6 @@ Anschliessend können die verschiedenen Tests durchgeführt werden:
 ./gradlew app:test
 ```
 
+Konkret prüft die Zusatzfunktionen, ob in einem Attributwert ein spezifischer Buchstaben vorkommt (bissle gaga...).
+
 
