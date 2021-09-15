@@ -29,8 +29,10 @@ public class CsvValidator {
         settings.setValue(Validator.SETTING_DISABLE_STD_LOGGER, Validator.TRUE);
         settings.setValue(Validator.SETTING_MODELNAMES, modelName);
         settings.setValue(Validator.SETTING_ILIDIRS, Validator.SETTING_DEFAULT_ILIDIRS);
-
+        
         // set optional parameters
+        settings.setValue(Validator.SETTING_PLUGINFOLDER, new File("build/libs/").getAbsolutePath());
+        
         settings.setValue(IoxWkfConfig.SETTING_FIRSTLINE, firstLineIsHeader ? IoxWkfConfig.SETTING_FIRSTLINE_AS_HEADER : IoxWkfConfig.SETTING_FIRSTLINE_AS_VALUE);
         if (valueDelimiter != null) {
             settings.setValue(IoxWkfConfig.SETTING_VALUEDELIMITER, valueDelimiter.toString());

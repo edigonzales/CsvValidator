@@ -1,14 +1,22 @@
 INTERLIS 2.3;
 
-MODEL CsvModelFunction (de) AT "mailto:stefan@localhost" VERSION "20210915" =
+CONTRACTED TYPE MODEL SO_Functions (de) AT "mailto:stefan@localhost" VERSION "20210915" =
 
-    FUNCTION containsChar (value: TEXT, character: TEXT): BOOLEAN;
+    FUNCTION containsChar (value: TEXT; character: TEXT): BOOLEAN;
 
+END SO_Functions.
+
+
+MODEL CsvModelFunction (de) AT "mailto:ceis@localhost" VERSION "20170703" =
+    IMPORTS SO_Functions;
+    
 	TOPIC Topic12 =
 		CLASS Class1 =
 			attr1 : MANDATORY TEXT*40;
 			attr2 : 1 .. 10;
 			attr3 : (rot,blau);
+            !!@ ilivalid.msg = "Attribut attr1={attr1} fehlt bestimmter Buchstaben";
+			MANDATORY CONSTRAINT SO_Functions.containsChar(attr1,"a");
 		END Class1;
 	END Topic12;
 END CsvModelFunction.

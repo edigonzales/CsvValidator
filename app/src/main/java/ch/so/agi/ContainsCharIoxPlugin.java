@@ -24,16 +24,22 @@ public class ContainsCharIoxPlugin implements InterlisFunction {
         if (actualArguments[0].isUndefined()) {
             return Value.createSkipEvaluation();
         }
+        if (actualArguments[1].skipEvaluation()) {
+            return actualArguments[1];
+        }
+        if (actualArguments[1].isUndefined()) {
+            return Value.createSkipEvaluation();
+        }
+        
+        String attr = actualArguments[0].getValue();
+        String character = actualArguments[1].getValue();
 
-        
-        
-        
-        return null;
+        return new Value(attr.contains(character));
     }
 
     @Override
     public String getQualifiedIliName() {
-        return "CsvModelFunction.containsChar";
+        return "SO_Functions.containsChar";
     }
 
     @Override
