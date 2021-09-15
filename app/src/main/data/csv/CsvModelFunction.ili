@@ -1,0 +1,14 @@
+INTERLIS 2.3;
+
+MODEL CsvModelFunction (de) AT "mailto:stefan@localhost" VERSION "20210915" =
+
+    FUNCTION containsChar (value: TEXT, character: TEXT): BOOLEAN;
+
+	TOPIC Topic12 =
+		CLASS Class1 =
+			attr1 : MANDATORY TEXT*40;
+			attr2 : 1 .. 10;
+			attr3 : (rot,blau);
+		END Class1;
+	END Topic12;
+END CsvModelFunction.

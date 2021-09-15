@@ -1,0 +1,27 @@
+plugins {
+    id 'application'
+}
+
+repositories {
+    maven { url "https://repo.osgeo.org/repository/release/" }
+    mavenCentral()
+    maven { url "http://jars.interlis.ch"; allowInsecureProtocol true }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+    implementation 'ch.interlis:iox-api:1.0.4'
+    implementation 'ch.interlis:iox-ili:1.20.15'
+    implementation 'ch.interlis:iox-wkf:1.0.2'
+    implementation 'ch.interlis:ilivalidator:1.11.3'
+}
+
+application {
+    mainClass = 'ch.so.agi.App'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
