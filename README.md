@@ -1,6 +1,9 @@
 # CsvValidator
 
-Demo für Zusatzprüfungen mit (GRETL-)CsvValidator.
+Demo für Zusatzprüfungen mit (GRETL-)CsvValidator:
+
+- `CsvValidator.java`: Simuliert Gradle-Task
+- `CsvValidatorImpl.java`: Implementiert einen Validator. Benötigt im Prinzip eine IoxReader-Implementierung für ein bestimmtes Format (in diesem Fall CsvReader) and you're good to go. Copy/Paste von GRETL.
 
 Modell und Testdaten unter `src/test/data/csv/`:
 
